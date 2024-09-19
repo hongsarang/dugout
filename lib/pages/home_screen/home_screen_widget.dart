@@ -57,7 +57,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
               ),
             ],
           ),
-          actions: [],
+          actions: const [],
           centerTitle: false,
           elevation: 2.0,
         ),
@@ -90,7 +90,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                               width: MediaQuery.sizeOf(context).width * 0.1,
                               height: MediaQuery.sizeOf(context).width * 0.1,
                               clipBehavior: Clip.antiAlias,
-                              decoration: BoxDecoration(
+                              decoration: const BoxDecoration(
                                 shape: BoxShape.circle,
                               ),
                               child: Image.asset(
@@ -121,8 +121,8 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                   ),
                             ),
                           ]
-                              .divide(SizedBox(width: 10.0))
-                              .around(SizedBox(width: 10.0)),
+                              .divide(const SizedBox(width: 10.0))
+                              .around(const SizedBox(width: 10.0)),
                         ),
                         Row(
                           mainAxisSize: MainAxisSize.max,
@@ -138,8 +138,8 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                   ),
                             ),
                           ]
-                              .divide(SizedBox(width: 10.0))
-                              .around(SizedBox(width: 10.0)),
+                              .divide(const SizedBox(width: 10.0))
+                              .around(const SizedBox(width: 10.0)),
                         ),
                         ListView(
                           padding: EdgeInsets.zero,
@@ -197,155 +197,164 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                     ),
                                   ),
                                 ]
-                                    .divide(SizedBox(width: 5.0))
-                                    .addToStart(SizedBox(width: 10.0))
-                                    .addToEnd(SizedBox(width: 10.0)),
+                                    .divide(const SizedBox(width: 5.0))
+                                    .addToStart(const SizedBox(width: 10.0))
+                                    .addToEnd(const SizedBox(width: 10.0)),
                               ),
                             ),
                           ],
                         ),
                       ]
-                          .divide(SizedBox(height: 10.0))
-                          .around(SizedBox(height: 10.0)),
+                          .divide(const SizedBox(height: 10.0))
+                          .around(const SizedBox(height: 10.0)),
                     ),
                   ),
                 ),
-                Card(
-                  clipBehavior: Clip.antiAliasWithSaveLayer,
-                  color: FlutterFlowTheme.of(context).secondaryBackground,
-                  elevation: 0.0,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(8.0),
+                Container(
+                  decoration: BoxDecoration(
+                    border: Border(
+                      bottom: BorderSide(
+                        color: FlutterFlowTheme.of(context).secondaryText,
+                      ),
+                    ),
                   ),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Row(
-                        mainAxisSize: MainAxisSize.max,
-                        children: [
-                          Container(
-                            width: MediaQuery.sizeOf(context).width * 0.1,
-                            height: MediaQuery.sizeOf(context).width * 0.1,
-                            clipBehavior: Clip.antiAlias,
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
+                  child: Card(
+                    clipBehavior: Clip.antiAliasWithSaveLayer,
+                    color: FlutterFlowTheme.of(context).secondaryBackground,
+                    elevation: 0.0,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8.0),
+                    ),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Row(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            Container(
+                              width: MediaQuery.sizeOf(context).width * 0.1,
+                              height: MediaQuery.sizeOf(context).width * 0.1,
+                              clipBehavior: Clip.antiAlias,
+                              decoration: const BoxDecoration(
+                                shape: BoxShape.circle,
+                              ),
+                              child: Image.asset(
+                                'assets/images/Ellipse_3.jpg',
+                                fit: BoxFit.cover,
+                              ),
                             ),
-                            child: Image.asset(
-                              'assets/images/Ellipse_3.jpg',
-                              fit: BoxFit.cover,
+                            Text(
+                              '@케이티위즈',
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .override(
+                                    fontFamily: 'Inter',
+                                    letterSpacing: 0.0,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                             ),
-                          ),
-                          Text(
-                            '@케이티위즈',
-                            style: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .override(
-                                  fontFamily: 'Inter',
-                                  letterSpacing: 0.0,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                          ),
-                          Text(
-                            '3분 전',
-                            style: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .override(
-                                  fontFamily: 'Inter',
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryText,
-                                  fontSize: 12.0,
-                                  letterSpacing: 0.0,
-                                ),
-                          ),
-                        ]
-                            .divide(SizedBox(width: 10.0))
-                            .around(SizedBox(width: 10.0)),
-                      ),
-                      Row(
-                        mainAxisSize: MainAxisSize.max,
-                        children: [
-                          Text(
-                            'KT 경기장은 뭐가 제일 맛있나요??',
-                            style: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .override(
-                                  fontFamily: 'Inter',
-                                  letterSpacing: 0.0,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                          ),
-                        ]
-                            .divide(SizedBox(width: 10.0))
-                            .around(SizedBox(width: 10.0)),
-                      ),
-                      ListView(
-                        padding: EdgeInsets.zero,
-                        shrinkWrap: true,
-                        scrollDirection: Axis.vertical,
-                        children: [
-                          SingleChildScrollView(
-                            scrollDirection: Axis.horizontal,
-                            child: Row(
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                ClipRRect(
-                                  borderRadius: BorderRadius.circular(13.0),
-                                  child: Image.network(
-                                    'https://picsum.photos/seed/918/600',
-                                    width: 200.0,
-                                    height: 200.0,
-                                    fit: BoxFit.cover,
+                            Text(
+                              '3분 전',
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .override(
+                                    fontFamily: 'Inter',
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryText,
+                                    fontSize: 12.0,
+                                    letterSpacing: 0.0,
                                   ),
-                                ),
-                                ClipRRect(
-                                  borderRadius: BorderRadius.circular(13.0),
-                                  child: Image.network(
-                                    'https://picsum.photos/seed/913/600',
-                                    width: 200.0,
-                                    height: 200.0,
-                                    fit: BoxFit.cover,
-                                  ),
-                                ),
-                                ClipRRect(
-                                  borderRadius: BorderRadius.circular(13.0),
-                                  child: Image.network(
-                                    'https://picsum.photos/seed/693/600',
-                                    width: 200.0,
-                                    height: 200.0,
-                                    fit: BoxFit.cover,
-                                  ),
-                                ),
-                                ClipRRect(
-                                  borderRadius: BorderRadius.circular(13.0),
-                                  child: Image.network(
-                                    'https://picsum.photos/seed/130/600',
-                                    width: 200.0,
-                                    height: 200.0,
-                                    fit: BoxFit.cover,
-                                  ),
-                                ),
-                                ClipRRect(
-                                  borderRadius: BorderRadius.circular(13.0),
-                                  child: Image.network(
-                                    'https://picsum.photos/seed/303/600',
-                                    width: 200.0,
-                                    height: 200.0,
-                                    fit: BoxFit.cover,
-                                  ),
-                                ),
-                              ]
-                                  .divide(SizedBox(width: 5.0))
-                                  .addToStart(SizedBox(width: 10.0))
-                                  .addToEnd(SizedBox(width: 10.0)),
                             ),
-                          ),
-                        ],
-                      ),
-                    ]
-                        .divide(SizedBox(height: 10.0))
-                        .around(SizedBox(height: 10.0)),
+                          ]
+                              .divide(const SizedBox(width: 10.0))
+                              .around(const SizedBox(width: 10.0)),
+                        ),
+                        Row(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            Text(
+                              'KT 경기장은 뭐가 제일 맛있나요??',
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .override(
+                                    fontFamily: 'Inter',
+                                    letterSpacing: 0.0,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                            ),
+                          ]
+                              .divide(const SizedBox(width: 10.0))
+                              .around(const SizedBox(width: 10.0)),
+                        ),
+                        ListView(
+                          padding: EdgeInsets.zero,
+                          shrinkWrap: true,
+                          scrollDirection: Axis.vertical,
+                          children: [
+                            SingleChildScrollView(
+                              scrollDirection: Axis.horizontal,
+                              child: Row(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  ClipRRect(
+                                    borderRadius: BorderRadius.circular(13.0),
+                                    child: Image.network(
+                                      'https://picsum.photos/seed/918/600',
+                                      width: 200.0,
+                                      height: 200.0,
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
+                                  ClipRRect(
+                                    borderRadius: BorderRadius.circular(13.0),
+                                    child: Image.network(
+                                      'https://picsum.photos/seed/913/600',
+                                      width: 200.0,
+                                      height: 200.0,
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
+                                  ClipRRect(
+                                    borderRadius: BorderRadius.circular(13.0),
+                                    child: Image.network(
+                                      'https://picsum.photos/seed/693/600',
+                                      width: 200.0,
+                                      height: 200.0,
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
+                                  ClipRRect(
+                                    borderRadius: BorderRadius.circular(13.0),
+                                    child: Image.network(
+                                      'https://picsum.photos/seed/130/600',
+                                      width: 200.0,
+                                      height: 200.0,
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
+                                  ClipRRect(
+                                    borderRadius: BorderRadius.circular(13.0),
+                                    child: Image.network(
+                                      'https://picsum.photos/seed/303/600',
+                                      width: 200.0,
+                                      height: 200.0,
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
+                                ]
+                                    .divide(const SizedBox(width: 5.0))
+                                    .addToStart(const SizedBox(width: 10.0))
+                                    .addToEnd(const SizedBox(width: 10.0)),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ]
+                          .divide(const SizedBox(height: 10.0))
+                          .around(const SizedBox(height: 10.0)),
+                    ),
                   ),
                 ),
               ],
