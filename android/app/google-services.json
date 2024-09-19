@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "938738979755",
+    "project_id": "dugout-lpvt20",
+    "storage_bucket": "dugout-lpvt20.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:938738979755:android:85dfef56759c054f69f8ee",
+        "android_client_info": {
+          "package_name": "com.mycompany.dugout"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDCOiWjqtjVyMa7PJGMGRC3luFtRMfObFA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
