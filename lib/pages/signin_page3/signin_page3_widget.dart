@@ -72,33 +72,40 @@ class _SigninPage3WidgetState extends State<SigninPage3Widget> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Column(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(8.0),
-                        child: Image.asset(
-                          'assets/images/image-removebg-preview.png',
-                          width: 200.0,
-                          height: 200.0,
-                          fit: BoxFit.cover,
+                  Container(
+                    width: double.infinity,
+                    height: MediaQuery.sizeOf(context).height * 0.5,
+                    decoration: BoxDecoration(),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(8.0),
+                          child: Image.asset(
+                            'assets/images/image-removebg-preview.png',
+                            width: 200.0,
+                            height: 200.0,
+                            fit: BoxFit.cover,
+                          ),
                         ),
-                      ),
-                      Text(
-                        '\$user_name님,\n가입을 축하합니다!',
-                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Inter',
-                              fontSize: 32.0,
-                              letterSpacing: 0.0,
-                              fontWeight: FontWeight.bold,
-                            ),
-                      ),
-                    ],
+                        Text(
+                          '\$user_name님,\n가입을 축하합니다!',
+                          style:
+                              FlutterFlowTheme.of(context).bodyMedium.override(
+                                    fontFamily: 'Inter',
+                                    fontSize: 32.0,
+                                    letterSpacing: 0.0,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                        ),
+                      ],
+                    ),
                   ),
+                  Spacer(),
                   FFButtonWidget(
-                    onPressed: () {
-                      print('Button pressed ...');
+                    onPressed: () async {
+                      context.pushNamed('HomePage');
                     },
                     text: 'Button',
                     options: FFButtonOptions(

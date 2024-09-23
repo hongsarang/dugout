@@ -64,6 +64,7 @@ abstract class FlutterFlowTheme {
   late Color hanwhacolor;
   late Color kiwoomcolor;
   late Color samsungcolor;
+  late Color cardColor;
 
   @Deprecated('Use displaySmallFamily instead')
   String get title1Family => displaySmallFamily;
@@ -142,8 +143,8 @@ class LightModeTheme extends FlutterFlowTheme {
   late Color alternate = const Color(0xFFE0E3E7);
   late Color primaryText = const Color(0xFF1E1E1E);
   late Color secondaryText = const Color(0xFFB5B6C0);
-  late Color primaryBackground = const Color(0xFFF1F4F8);
-  late Color secondaryBackground = const Color(0xFFFFFFFF);
+  late Color primaryBackground = const Color(0xFFFFFFFF);
+  late Color secondaryBackground = const Color(0xFFF1F4F8);
   late Color accent1 = const Color(0x4C4B39EF);
   late Color accent2 = const Color(0x4D39D2C0);
   late Color accent3 = const Color(0x4DEE8B60);
@@ -163,6 +164,7 @@ class LightModeTheme extends FlutterFlowTheme {
   late Color hanwhacolor = Color(0xFFF17327);
   late Color kiwoomcolor = Color(0xFF891843);
   late Color samsungcolor = Color(0xFF3166A8);
+  late Color cardColor = Color(0xFFF7F7F7);
 }
 
 abstract class Typography {
@@ -242,7 +244,7 @@ class ThemeTypography extends Typography {
   TextStyle get headlineSmall => GoogleFonts.getFont(
         'Inter Tight',
         color: theme.primaryText,
-        fontWeight: FontWeight.w600,
+        fontWeight: FontWeight.w500,
         fontSize: 24.0,
       );
   String get titleLargeFamily => 'Inter Tight';
@@ -335,16 +337,17 @@ class DarkModeTheme extends FlutterFlowTheme {
   late Color error = const Color(0xFFFF5963);
   late Color info = const Color(0xFFFFFFFF);
 
-  late Color kiacolor = Color(0xFFBF926F);
-  late Color nccolor = Color(0xFF627C48);
-  late Color ssgcolor = Color(0xFFFDB7A2);
-  late Color ktwizcolor = Color(0xFF1C046F);
-  late Color lgcolor = Color(0xFF880F40);
-  late Color lottecolor = Color(0xFF970CAE);
-  late Color dusancolor = Color(0xFF1F721F);
-  late Color hanwhacolor = Color(0xFF9D7089);
-  late Color kiwoomcolor = Color(0xFFB63339);
-  late Color samsungcolor = Color(0xFFB5F5CE);
+  late Color kiacolor = Color(0xFFDA0D46);
+  late Color nccolor = Color(0xFF526A96);
+  late Color ssgcolor = Color(0xFFEB1026);
+  late Color ktwizcolor = Color(0xFF262624);
+  late Color lgcolor = Color(0xFFBB1368);
+  late Color lottecolor = Color(0xFF284B6B);
+  late Color dusancolor = Color(0xFF33334B);
+  late Color hanwhacolor = Color(0xFFF17327);
+  late Color kiwoomcolor = Color(0xFF891843);
+  late Color samsungcolor = Color(0xFF3166A8);
+  late Color cardColor = Color(0xFFF7F7F7);
 }
 
 extension TextStyleHelper on TextStyle {

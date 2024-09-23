@@ -79,33 +79,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? HomePageWidget() : LoginWidget(),
+          appStateNotifier.loggedIn ? NavBarPage() : LoginWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) =>
-              appStateNotifier.loggedIn ? HomePageWidget() : LoginWidget(),
-        ),
-        FFRoute(
-          name: 'HomePage',
-          path: '/homePage',
-          builder: (context, params) => HomePageWidget(),
-        ),
-        FFRoute(
-          name: 'SigninPage1',
-          path: '/signinPage1',
-          builder: (context, params) => SigninPage1Widget(),
-        ),
-        FFRoute(
-          name: 'SigninPage2',
-          path: '/signinPage2',
-          builder: (context, params) => SigninPage2Widget(),
-        ),
-        FFRoute(
-          name: 'SigninPage3',
-          path: '/signinPage3',
-          builder: (context, params) => SigninPage3Widget(),
+              appStateNotifier.loggedIn ? NavBarPage() : LoginWidget(),
         ),
         FFRoute(
           name: 'Login',
@@ -113,11 +93,123 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => LoginWidget(),
         ),
         FFRoute(
-          name: 'HomeScreen',
-          path: '/homeScreen',
-          builder: (context, params) => HomeScreenWidget(),
+          name: 'SigninPage1',
+          path: '/signinPage1',
+          builder: (context, params) => SigninPage1Widget(
+            display: params.getParam(
+              'display',
+              ParamType.bool,
+            ),
+            gender: params.getParam(
+              'gender',
+              ParamType.String,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: 'SigninPage2',
+          path: '/signinPage2',
+          builder: (context, params) => SigninPage2Widget(
+            selected: params.getParam(
+              'selected',
+              ParamType.Color,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: 'SigninPage3',
+          path: '/signinPage3',
+          builder: (context, params) => SigninPage3Widget(),
+        ),
+        FFRoute(
+          name: 'LoginEg',
+          path: '/loginEg',
+          builder: (context, params) => LoginEgWidget(),
+        ),
+        FFRoute(
+          name: 'HomePage',
+          path: '/homePage',
+          builder: (context, params) => params.isEmpty
+              ? NavBarPage(initialPage: 'HomePage')
+              : HomePageWidget(),
+        ),
+        FFRoute(
+          name: 'Community',
+          path: '/community',
+          builder: (context, params) => params.isEmpty
+              ? NavBarPage(initialPage: 'Community')
+              : CommunityWidget(),
+        ),
+        FFRoute(
+          name: 'Post',
+          path: '/post',
+          builder: (context, params) => PostWidget(),
+        ),
+        FFRoute(
+          name: 'Ranking',
+          path: '/ranking',
+          builder: (context, params) => params.isEmpty
+              ? NavBarPage(initialPage: 'Ranking')
+              : RankingWidget(),
+        ),
+        FFRoute(
+          name: 'Chat',
+          path: '/chat',
+          builder: (context, params) =>
+              params.isEmpty ? NavBarPage(initialPage: 'Chat') : ChatWidget(),
+        ),
+        FFRoute(
+          name: 'backend_test',
+          path: '/backendTest',
+          builder: (context, params) => BackendTestWidget(),
+        ),
+        FFRoute(
+          name: 'upload_teams',
+          path: '/uploadTeams',
+          builder: (context, params) => UploadTeamsWidget(),
+        ),
+        FFRoute(
+          name: 'select_team_test',
+          path: '/selectTeamTest',
+          builder: (context, params) => SelectTeamTestWidget(),
+        ),
+        FFRoute(
+          name: 'anitest',
+          path: '/anitest',
+          builder: (context, params) => AnitestWidget(),
+        ),
+        FFRoute(
+          name: 'kk',
+          path: '/kk',
+          builder: (context, params) => KkWidget(),
+        ),
+        FFRoute(
+          name: 'HomePageCopy',
+          path: '/homePageCopy',
+          builder: (context, params) => params.isEmpty
+              ? NavBarPage(initialPage: 'HomePageCopy')
+              : HomePageCopyWidget(),
+        ),
+        FFRoute(
+          name: 'upload_board',
+          path: '/uploadBoard',
+          builder: (context, params) => UploadBoardWidget(),
+        ),
+        FFRoute(
+          name: 'comment',
+          path: '/comment',
+          asyncParams: {
+            'postDoc': getDoc(['post'], PostRecord.fromSnapshot),
+          },
+          builder: (context, params) => CommentWidget(
+            postDoc: params.getParam(
+              'postDoc',
+              ParamType.Document,
+            ),
+          ),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
+      observers: [routeObserver],
     );
 
 extension NavParamExtensions on Map<String, String?> {

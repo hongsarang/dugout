@@ -1,3 +1,18 @@
 {
-  "indexes": []
+  "indexes": [
+    {
+      "collectionGroup": "post",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "board_name",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "time_posted",
+          "order": "DESCENDING"
+        }
+      ]
+    }
+  ]
 }
